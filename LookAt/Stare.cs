@@ -11,8 +11,8 @@ namespace LookAt
 {
     internal class Stare
     {
-        public static void LookAtPlayer() // Original code remade from xKiraiChan's code | https://github.com/Astrum-Project/AstralStare/blob/master/AstralStare.cs |
-        { //SelectedPlayer.PlayerObject.transform
+        public static void LookAtPlayer() 
+        { 
             Transform te = GameObject.Find(QuickMenuAPI.SelectedPlayerID)?.transform;
 
             if (te != null)
