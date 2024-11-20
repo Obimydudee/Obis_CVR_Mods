@@ -11,9 +11,9 @@ namespace LookAt
 {
     internal class Stare
     {
-        public static void LookAtPlayer() 
-        { 
-            Transform te = GameObject.Find(QuickMenuAPI.SelectedPlayerID)?.transform;
+        public static void LookAtPlayer() // Original code remade from xKiraiChan's code | https://github.com/Astrum-Project/AstralStare/blob/master/AstralStare.cs |
+        { //SelectedPlayer.PlayerObject.transform
+            Transform te = GameObject.Find(QuickMenuAPI.SelectedPlayerID).transform;
 
             if (te != null)
             { //
@@ -22,21 +22,9 @@ namespace LookAt
             }
             else
             {
-                if (btn.stare.ToggleValue)
-                {
-                    main._update -= LookAtPlayer;
-                    GameObject cv = util.GetLocalPlayerAvatar();
-                    cv.GetComponent<LookAtIK>().enabled = true;
-                    cv.transform.localRotation = Quaternion.Euler(Vector3.zero);
-                    btn.stare.ToggleValue = false;
-
-                }
-                else
-                {
-                    QuickMenuAPI.ShowAlertToast("Null Object");
-                    btn.stare.ToggleValue = false;
-                }
-                
+                main._update -= LookAtPlayer;
+                GameObject cv = util.GetLocalPlayerAvatar();
+                cv.GetComponent<LookAtIK>().enabled = true;
                 return;
             }
             return;

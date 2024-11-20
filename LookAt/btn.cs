@@ -9,13 +9,13 @@ namespace LookAt
 {
     internal class btn
     {
-        public static ToggleButton stare;
         internal static Category SelectedUsrCat = QuickMenuAPI.PlayerSelectPage.AddCategory("LookAt");
 
         public static void init()
         {
-            stare = SelectedUsrCat.AddToggle($"stare at {QuickMenuAPI.SelectedPlayerName}", "", false);
-            stare.OnValueUpdated += b =>
+            ToggleButton stare = SelectedUsrCat.AddToggle($"stare at {QuickMenuAPI.SelectedPlayerName}", "", false);
+            ToggleButton stareToggle = stare;
+            stareToggle.OnValueUpdated += b =>
             {
                 if (Friends.FriendsWith(QuickMenuAPI.SelectedPlayerID))
                 {
@@ -41,7 +41,7 @@ namespace LookAt
                         cv.transform.localRotation = Quaternion.Euler(Vector3.zero);
                     }
                 }
-                else { stare.ToggleValue = false; QuickMenuAPI.ShowAlertToast($"You are not friends with {QuickMenuAPI.SelectedPlayerName}!"); }
+                else { stareToggle.ToggleValue = false; QuickMenuAPI.ShowAlertToast($"You are not friends with {QuickMenuAPI.SelectedPlayerName}!"); }
                 
 
             };
