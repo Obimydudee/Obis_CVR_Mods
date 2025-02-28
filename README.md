@@ -7,4 +7,9 @@
 ## NaN Recovery
 You can recover yourself from NaN point by pressing **F2**
 
+
+## 3rdperson
+get third person with **T**
+
+
 ## SanAndreasFogFix (Deprecated)
