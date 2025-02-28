@@ -84,7 +84,6 @@ namespace _3rdPerson
                 {
                     if (THRDP.CameraSetup == 0)
                     {
-                        _uiDot.GetComponent<Image>().enabled = true;
                         _uiDot.gameObject.SetActive(true);
                         _uiCam.gameObject.SetActive(true);
                         _uiCoHt.gameObject.SetActive(true);
@@ -93,7 +92,6 @@ namespace _3rdPerson
                     }
                     else if (THRDP.CameraSetup == 1)
                     {
-                        _uiDot.GetComponent<Image>().enabled = false;
                         _uiDot.gameObject.SetActive(false);
                         _uiCam.gameObject.SetActive(false);
                         _uiCoHt.gameObject.SetActive(false);
@@ -102,7 +100,6 @@ namespace _3rdPerson
                     }
                     else if (THRDP.CameraSetup == 2)
                     {
-                        _uiDot.GetComponent<Image>().enabled = false;
                         _uiDot.gameObject.SetActive(false);
                         _uiCam.gameObject.SetActive(false);
                         _uiCoHt.gameObject.SetActive(false);
@@ -111,7 +108,7 @@ namespace _3rdPerson
                     }
                     if (THRDP.CameraSetup != 0)
                     {
-                        if (Input.GetKeyDown(KeyCode.Escape))
+                        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab))
                         {
                             THRDP.CameraSetup = 0;
                         }
