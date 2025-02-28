@@ -9,7 +9,9 @@ You can recover yourself from NaN point by pressing **F2**
 
 
 ## 3rdperson
-get third person with **T**
+use third person with **T**
+
+Works on all branches
 
 
 ## SanAndreasFogFix (Deprecated)
