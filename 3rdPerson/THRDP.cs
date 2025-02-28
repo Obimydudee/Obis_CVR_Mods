@@ -12,6 +12,8 @@ namespace _3rdPerson
         public static GameObject TPCameraFront;
         public static GameObject referenceCamera;
         public static GameObject _uiDot;
+        public static GameObject _uiCam;
+        public static GameObject _uiCoHt;
         public static float zoomOffset;
         public static float offsetX;
         public static float offsetY;
@@ -23,6 +25,8 @@ namespace _3rdPerson
             UnityEngine.Object.Destroy(gameObject.GetComponent<MeshRenderer>());
             THRDP.referenceCamera = GameObject.Find("_PLAYERLOCAL/[CameraRigDesktop]/Camera");
             _uiDot = GameObject.Find("_PLAYERLOCAL/[CameraRigDesktop]/Camera/Canvas/Image")?.gameObject;
+            _uiCam = GameObject.Find("_PLAYERLOCAL/[CameraRigDesktop]/Camera/_UICamera")?.gameObject;
+            _uiCoHt = GameObject.Find("_PLAYERLOCAL/[CameraRigDesktop]/Camera/CohtmlHud")?.gameObject;
             if (THRDP.referenceCamera != null)
             {
                 gameObject.transform.localScale = THRDP.referenceCamera.transform.localScale;
@@ -81,18 +85,27 @@ namespace _3rdPerson
                     if (THRDP.CameraSetup == 0)
                     {
                         _uiDot.GetComponent<Image>().enabled = true;
+                        _uiDot.gameObject.SetActive(true);
+                        _uiCam.gameObject.SetActive(true);
+                        _uiCoHt.gameObject.SetActive(true);
                         THRDP.TPCameraBack.GetComponent<Camera>().enabled = false;
                         THRDP.TPCameraFront.GetComponent<Camera>().enabled = false;
                     }
                     else if (THRDP.CameraSetup == 1)
                     {
                         _uiDot.GetComponent<Image>().enabled = false;
+                        _uiDot.gameObject.SetActive(false);
+                        _uiCam.gameObject.SetActive(false);
+                        _uiCoHt.gameObject.SetActive(false);
                         THRDP.TPCameraBack.GetComponent<Camera>().enabled = true;
                         THRDP.TPCameraFront.GetComponent<Camera>().enabled = false;
                     }
                     else if (THRDP.CameraSetup == 2)
                     {
                         _uiDot.GetComponent<Image>().enabled = false;
+                        _uiDot.gameObject.SetActive(false);
+                        _uiCam.gameObject.SetActive(false);
+                        _uiCoHt.gameObject.SetActive(false);
                         THRDP.TPCameraBack.GetComponent<Camera>().enabled = false;
                         THRDP.TPCameraFront.GetComponent<Camera>().enabled = true;
                     }
