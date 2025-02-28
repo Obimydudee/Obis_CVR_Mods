@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: MelonLoader.MelonInfo(typeof(_3rdPerson.main), "3rdPerson", "0.1", "Obi 1, adam99610", "gonna give you up, gonna let you down, gonna run around and desert you")]
+[assembly: MelonLoader.MelonInfo(typeof(_3rdPerson.main), "3rdPerson", "0.2", "Obi 1, adam99610", "gonna give you up, gonna let you down, gonna run around and desert you")]
 [assembly: MelonLoader.MelonGame("Alpha Blend Interactive", "ChilloutVR")]
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
