@@ -3,6 +3,7 @@ using MelonLoader;
 using ABI_RC.Core.Player;
 using ABI_RC.Core.Util;
 using ABI_RC.Core.UI;
+using ABI_RC.Core;
 
 namespace NanRecorevy
 {
@@ -17,6 +18,7 @@ namespace NanRecorevy
         }
 
         private static GameObject LocalPlayer;
+        private static RootLogic _rl = new RootLogic();
         public static GameObject GetLocalPlayer()
         {
             if (LocalPlayer == null) LocalPlayer = GameObject.Find("_PLAYERLOCAL");
@@ -25,7 +27,7 @@ namespace NanRecorevy
 
         public static void EmergencyRespawn()
         {
-            GetLocalPlayer().transform.position = new UnityEngine.Vector3(0, -1000, 0);
+            _rl.Respawn();
             CVRPlayerManager.Instance.ReloadAllAvatars();
             CVRSyncHelper.DeleteAllProps();
             MelonLogger.Msg("[EMERGENCY RESPAWN] - recovered from NaN");
