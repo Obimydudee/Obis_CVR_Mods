@@ -18,7 +18,6 @@ namespace NanRecorevy
         }
 
         private static GameObject LocalPlayer;
-        private static RootLogic _rl = new RootLogic();
         public static GameObject GetLocalPlayer()
         {
             if (LocalPlayer == null) LocalPlayer = GameObject.Find("_PLAYERLOCAL");
@@ -27,7 +26,7 @@ namespace NanRecorevy
 
         public static void EmergencyRespawn()
         {
-            _rl.Respawn();
+            RootLogic.Instance.Respawn();
             CVRPlayerManager.Instance.ReloadAllAvatars();
             CVRSyncHelper.DeleteAllProps();
             MelonLogger.Msg("[EMERGENCY RESPAWN] - recovered from NaN");

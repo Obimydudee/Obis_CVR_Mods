@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using MelonLoader;
 
 
-[assembly: MelonLoader.MelonInfo(typeof(NanRecorevy.main), "NaNRecovery", "0.2", "Obi 1", "Do you even see this?")]
+[assembly: MelonLoader.MelonInfo(typeof(NanRecorevy.main), "NaNRecovery", "0.2.1", "Obi 1", "Do you even see this?")]
 [assembly: MelonLoader.MelonGame("Alpha Blend Interactive", "ChilloutVR")]
 
 
